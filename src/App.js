@@ -2,25 +2,55 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// function App() {
+  class App extends React.Component{
+    constructor(props){
+        super(props)
+        
+        this.state={
+            username:'',
+            password:'',
+        }
+    }
+    // handleLoginInput=()=>{
+        
+    // }
+    render(){
+        return(
+     <div>
+         <form className='login-form'>
+             <label>
+                 <h1>Login Form</h1>
+             </label>
+             <label>
+                 <h1>Username</h1>
+
+                 {/* <TextField placeholder='username' type='text' ></TextField> */}
+
+             </label>
+             <label>
+                 <h1>Password</h1>
+
+                 {/* <TextField placeholder='password' type='password'></TextField> */}
+                  
+             </label>
+             <label>
+                
+                  
+             </label>
+         </form>
+       </div>
+        // <div>  
+        //     <footer>
+        //         <hr></hr>
+        //         <p>(C) Copyright Gor SHAROYAN /</p>
+        //         <p> UI created by using :https://material-ui.com</p>
+        //     </footer>
+        // </div>            
+        )
+    }
 }
+  
+
 
 export default App;
