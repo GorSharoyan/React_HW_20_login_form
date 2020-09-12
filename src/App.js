@@ -18,18 +18,20 @@ import TextField from '@material-ui/core/TextField';
      <div>
          <form className='login-form'>
              <label>
-                 <h1>Login Form</h1>
+                 <h3>Username</h3>
+                 <TextField id="outlined-basic" label="Username" variant="outlined" type='text'
+                    value={this.state.step} onChange={this.handleStep} />
              </label>
              <label>
-                 <h1>Username</h1>
-                 {/* <TextField placeholder='username' type='text' ></TextField> */}
+                 <h3>Password</h3>
+                 <TextField id="outlined-basic" label="Password" variant="outlined" type='password'
+                    value={this.state.step} onChange={this.handleStep} />
              </label>
+             <hr></hr>
              <label>
-                 <h1>Password</h1>
-                 {/* <TextField placeholder='password' type='password'></TextField> */}
-             </label>
-             <label>
-                <Button> Submit </Button>
+                <Button variant="contained" color="primary" href="#contained-buttons" onClick={this.handleSubmit} >
+                 <h3>Submit</h3>
+               </Button>
                   
              </label>
          </form>
