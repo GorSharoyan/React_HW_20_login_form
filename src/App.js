@@ -34,8 +34,12 @@ import TextField from '@material-ui/core/TextField';
   // }
 
   handleSubmit=()=>{
+    if((this.state.username=='')||(this.state.username==='')){
+      throw new Error('Button Disabled')
+    }else{
     localStorage.setItem('state',JSON.stringify(this.state))
   }
+}
 
     render(){
         return(
