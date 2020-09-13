@@ -1,6 +1,7 @@
 .login-form {
    text-align: center;
 }
+
 .login-form {
   background-color:#ccc;
   margin-right:300px;
@@ -8,6 +9,12 @@
   border-radius:15px;
   padding:20px;
 }
-.btn{
+
+.btn:enabled{
+  height: 25px;
+}
+
+.btn:disabled{
+  color:white;
   height: 25px;
 }

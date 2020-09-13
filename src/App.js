@@ -10,36 +10,67 @@ import TextField from '@material-ui/core/TextField';
         this.state={
             username:'',
             password:'',
+            userError:'',
+            passError:'',
+            disabled:true,
         }
     }
 
   handleUserame=(event)=>{
-    // if(typeof(event.target.value)!=='string'){
-    //    throw new Error('invalid username')
-    // }else{
-      this.setState({
-        username:event.target.value
-      })
-    }
-  // }
+   if(event.target.value.trim()===''){
+     this.setState({
+       username:'',
+       userError:'Please enter your username!!!',
+       disabled:true,
+     })
+   }
+   else{
+     this.setState({
+       username:event.target.value,
+       userError:'',
+       disabled:false,
+     })
+   }
+  }
 
   handlePassowrd=(event)=>{
-    // if(typeof(event.target.value)!=='number'){
-    //     throw new Error('invalid password')
-    // }else{
+    if(event.target.value.trim()===''){
       this.setState({
-        password:event.target.value
+        password:'',
+        passError:'Please enter your password!!!',
+        disabled:true,
       })
     }
-  // }
+    else{
+      this.setState({
+        password:event.target.value,
+        passError:'',
+        disabled:false,
+      })
+    }
+  }
+ 
 
   handleSubmit=()=>{
-    if((this.state.username=='')||(this.state.username==='')){
-      throw new Error('Button Disabled')
-    }else{
-    localStorage.setItem('state',JSON.stringify(this.state))
+    if((this.state.password.trim()=='')||(this.state.username.trim()=='')){
+        this.setState({
+          disabled:true
+        })
+    }
+    else {
+      localStorage.setItem('state',JSON.stringify(this.state))
+
+      this.setState( {
+        username:'',
+        password:'',
+        userError:'',
+        passError:'',
+        disabled:true,
+    }
+      )
   }
 }
+
 
     render(){
         return(
@@ -51,19 +82,22 @@ import TextField from '@material-ui/core/TextField';
                     variant="outlined" type='text'
                     value={this.state.username} 
                     onChange={this.handleUserame} />
+                 <h5 style={{color: "red"}}>{this.state.userError}</h5>
              </label>
              <label>
-                 <h3>Password</h3>
-                 <TextField id="outlined-basic" label="Password"
-                   variant="outlined" type='password'
-                   value={this.state.password}
-                    onChange={this.handlePassowrd} />
+                  <h3>Password</h3>
+                    <TextField id="outlined-basic" label="Password"
+                    variant="outlined" type='password'
+                    value={this.state.password}
+                   onChange={this.handlePassowrd} />
+                  <h5 style={{color: "red"}}>{this.state.passError} </h5>
              </label>
              <hr></hr>
              <label>
                 <Button variant="contained" color="primary" 
                 href="#contained-buttons" 
                 className='btn'
+                disabled={this.state.disabled}
                 onClick={this.handleSubmit} >
                  <h5>Log In</h5>
                </Button>
