@@ -1,13 +1,14 @@
-.login-form {
+body {
    text-align: center;
 }
 
 .login-form {
   background-color:#ccc;
-  margin-right:300px;
-  margin-left:300px;
+  margin-right:500px;
+  margin-left:500px;
   border-radius:15px;
   padding:20px;
+  width: 450px;
 }
 
 .btn:enabled{

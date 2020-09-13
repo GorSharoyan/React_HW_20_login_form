@@ -74,7 +74,7 @@ import TextField from '@material-ui/core/TextField';
 
     render(){
         return(
-     <div>
+     <body>
          <form className='login-form' onSubmit={this.handleSubmit}>
              <label>
                  <h3>Username</h3>
@@ -104,7 +104,7 @@ import TextField from '@material-ui/core/TextField';
                   
              </label>
          </form>
-       </div>
+       </body>
             
         )
     }
