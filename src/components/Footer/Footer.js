@@ -6,7 +6,7 @@ export default function Footer() {
  <div>  
     <footer>
       <hr></hr>
-        <p>(C) Copyright Gor SHAROYAN /</p>
+        <p>(C) Copyright Gor SHAROYAN</p>
         <p> UI created by using :https://material-ui.com</p>
     </footer>
  </div> 
